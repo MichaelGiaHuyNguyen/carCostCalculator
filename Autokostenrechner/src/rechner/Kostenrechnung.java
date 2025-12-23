@@ -5,97 +5,139 @@ import java.util.Scanner;
 public class Kostenrechnung {
 
     public static void main(String[] args) {
-
-        double spritpreis1 = 0;
-        double verbrauch1 = 0;
-        double kilometer1 = 0;
-
-        double spritpreis2 = 0;
-        double verbrauch2 = 0;
-        double kilometer2 = 0;
-
-        Scanner scanner = new Scanner(System.in);
-
-       
-        System.out.println("Bitte gib den Namen des ersten Autos ein:");
-        String auto1 = scanner.nextLine();
-
-        System.out.println("Bitte gib die Anschaffungskosten ein:");
-        double anschaffungskosten1 = scanner.nextDouble();
-        scanner.nextLine(); 
-
-        System.out.println("Bitte gib deinen Kfz-Monatsbeitrag ein:");
-        double kfzmonatsbeitrag1 = scanner.nextDouble();
-        scanner.nextLine(); 
-
-        System.out.println("Bitte gib deine Kraftstoffart ein (Benzin/Diesel):");
-        String kraftstoffart1 = scanner.nextLine();
-
-        if (kraftstoffart1.equalsIgnoreCase("Benzin") || kraftstoffart1.equalsIgnoreCase("Diesel")) {
-
-            System.out.println("Bitte gib den Preis pro Liter an:");
-            spritpreis1 = scanner.nextDouble();
-
-            System.out.println("Bitte gib den Verbrauch (L/100km) an:");
-            verbrauch1 = scanner.nextDouble();
-
-            System.out.println("Bitte gib deine Jahreskilometer an:");
-            kilometer1 = scanner.nextDouble();
-            scanner.nextLine(); 
+    	
+    	double auto1kosten;
+    	double auto1laufleistung;
+    	double auto1verbrauch;
+    	double auto1versicherung;
+    	double auto1spritpreis;
+    	
+    	double auto2kosten;
+    	double auto2laufleistung;
+    	double auto2verbrauch;
+    	double auto2versicherung;
+    	double auto2spritpreis;
+    	
+    Scanner scanner = new Scanner(System.in);
+    
+    while (true) {
+        System.out.println("Wie viel Kostet dein Auto 1?");
+        if (scanner.hasNextDouble()) {
+        	auto1kosten = scanner.nextDouble();
+        	break; //win condition
+        } else {
+			System.out.println("Falscher input");
+			scanner.next();
+		}
+    }
+        while (true) {
+        	System.out.println("Wie viel Laufleistung hat dein Auto 1 im Jahr?");
+        	if (scanner.hasNextDouble()) {
+        		auto1laufleistung =  scanner.nextDouble();
+        		break;
+        	} else {
+        		System.out.println("Falscher input");
+        		scanner.next();
+        	}
         }
-
         
-        System.out.println("Bitte gib den Namen des zweiten Autos ein:");
-        String auto2 = scanner.nextLine();
-
-        System.out.println("Bitte gib die Anschaffungskosten ein:");
-        double anschaffungskosten2 = scanner.nextDouble();
-        scanner.nextLine(); 
-
-        System.out.println("Bitte gib deinen Kfz-Monatsbeitrag ein:");
-        double kfzmonatsbeitrag2 = scanner.nextDouble();
-        scanner.nextLine(); 
-
-        System.out.println("Bitte gib deine Kraftstoffart ein (Benzin/Diesel):");
-        String kraftstoffart2 = scanner.nextLine();
-
-        if (kraftstoffart2.equalsIgnoreCase("Benzin") || kraftstoffart2.equalsIgnoreCase("Diesel")) {
-
-            System.out.println("Bitte gib den Preis pro Liter an:");
-            spritpreis2 = scanner.nextDouble();
-
-            System.out.println("Bitte gib den Verbrauch (L/100km) an:");
-            verbrauch2 = scanner.nextDouble();
-
-            System.out.println("Bitte gib deine Jahreskilometer an:");
-            kilometer2 = scanner.nextDouble();
-            scanner.nextLine(); 
+    while (true) {
+    	System.out.println("Wie viel Verbrauch hat dein Auto 1");
+    	if (scanner.hasNextDouble()) {
+    		auto1verbrauch = scanner.nextDouble();
+    		break;
+    	} else {
+    		System.out.println("Falscher input");
+    		scanner.next();
+    	}
+    }
+    
+    while (true) {
+    	System.out.println("Wie viel zahlst du Versicherung im Monat für das Auto 1?");
+    	if (scanner.hasNextDouble()) {
+    		auto1versicherung = scanner.nextDouble();
+    		break;
+     	} else {
+     		System.out.println("Falscher input");
+    		scanner.next();
+     	}
+    }
+    
+    while (true) {
+    	 System.out.println("Spritpreis?");
+    	 if (scanner.hasNextDouble()) {
+    		 auto1spritpreis = scanner.nextDouble();
+    		 break;
+    	 } else {
+    		 System.out.println("Falscher input");
+    		 scanner.next();
+    	 }
+    }
+    
+    while (true) {
+        System.out.println("Wie viel Kostet dein Auto 2?");
+        if (scanner.hasNextDouble()) {
+        	auto2kosten = scanner.nextDouble();
+        	break; //win condition
+        } else {
+			System.out.println("Falscher input");
+			scanner.next();
+		}
+    }
+        while (true) {
+        	System.out.println("Wie viel Laufleistung hat dein Auto 2 im Jahr?");
+        	if (scanner.hasNextDouble()) {
+        		auto2laufleistung =  scanner.nextDouble();
+        		break;
+        	} else {
+        		System.out.println("Falscher input");
+        		scanner.next();
+        	}
         }
-
-        // --- Berechnung ---
-        System.out.println("Wie viele Jahre willst du verrechnen?");
-        double jahre = scanner.nextDouble();
-
-        double monate = jahre * 12;
-
-        // Spritkosten pro Jahr
-        double spritkosten1 = (verbrauch1 / 100.0) * kilometer1 * spritpreis1;
-        double spritkosten2 = (verbrauch2 / 100.0) * kilometer2 * spritpreis2;
-
-        // Gesamtkosten für den gesamten Zeitraum
-        double gesamtkosten1_total = anschaffungskosten1 + (kfzmonatsbeitrag1 * monate) + spritkosten1 * jahre;
-        double gesamtkosten2_total = anschaffungskosten2 + (kfzmonatsbeitrag2 * monate) + spritkosten2 * jahre;
-
-        // Durchschnitt pro Jahr
-        double gesamtkosten1_proJahr = gesamtkosten1_total / jahre;
-        double gesamtkosten2_proJahr = gesamtkosten2_total / jahre;
-
-        System.out.println("--------------------------------------------------");
-        System.out.println("Kostenvergleich:");
-        System.out.println(auto1 + " kostet dich durchschnittlich: " + gesamtkosten1_proJahr + " € pro Jahr.");
-        System.out.println(auto2 + " kostet dich durchschnittlich: " + gesamtkosten2_proJahr + " € pro Jahr.");
-        System.out.println("--------------------------------------------------");
-        scanner.close();
+        
+    while (true) {
+    	System.out.println("Wie viel Verbrauch hat dein Auto 2");
+    	if (scanner.hasNextDouble()) {
+    		auto2verbrauch = scanner.nextDouble();
+    		break;
+    	} else {
+    		System.out.println("Falscher input");
+    		scanner.next();
+    	}
+    }
+    
+    while (true) {
+    	System.out.println("Wie viel zahlst du Versicherung im Monat für das Auto 2?");
+    	if (scanner.hasNextDouble()) {
+    		auto2versicherung = scanner.nextDouble();
+    		break;
+     	} else {
+     		System.out.println("Falscher input");
+    		scanner.next();
+     	}
+    }
+    
+    while (true) {
+    	 System.out.println("Spritpreis?");
+    	 if (scanner.hasNextDouble()) {
+    		 auto2spritpreis = scanner.nextDouble();
+    		 break;
+    	 } else {
+    		 System.out.println("Falscher input");
+    		 scanner.next();
+    	 }
+    }
+    
+    double gesamtkosten1 = auto1kosten + (((auto1verbrauch / 100) * auto1laufleistung) * auto1spritpreis) + (auto1versicherung * 12);
+    
+    double gesamtkosten2 = auto2kosten + (((auto2verbrauch / 100) * auto2laufleistung) * auto2spritpreis) + (auto2versicherung * 12);
+    
+    System.out.println("Dein Auto 1 kostet" + gesamtkosten1 + "im Jahr");
+   
+    System.out.println("Dein Auto 2 kostet" + gesamtkosten2 + "im Jahr");
+    
+    scanner.close();
+    
     }
     
 }
