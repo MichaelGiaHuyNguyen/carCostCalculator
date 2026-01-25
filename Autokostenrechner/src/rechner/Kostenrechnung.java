@@ -20,6 +20,12 @@ public class Kostenrechnung {
     	
     Scanner scanner = new Scanner(System.in);
     
+    System.out.println("Bitte benenne das Auto 1:");
+    String autoname1 = scanner.nextLine();
+    
+    System.out.println("Bitte benenne das Auto 2:");
+    String autoname2 = scanner.nextLine();
+    
     while (true) {
         System.out.println("Wie viel Kostet dein Auto 1?");
         if (scanner.hasNextDouble()) {
@@ -132,9 +138,9 @@ public class Kostenrechnung {
     
     double gesamtkosten2 = auto2kosten + (((auto2verbrauch / 100) * auto2laufleistung) * auto2spritpreis) + (auto2versicherung * 12);
     
-    System.out.println("Dein Auto 1 kostet" + gesamtkosten1 + "im Jahr");
+    System.out.println("Dein " + autoname1 + "kostet" + gesamtkosten1 + " im Jahr");
    
-    System.out.println("Dein Auto 2 kostet" + gesamtkosten2 + "im Jahr");
+    System.out.println("Dein " + autoname2 + "kostet" + gesamtkosten2 + " im Jahr");
     
     scanner.close();
     
