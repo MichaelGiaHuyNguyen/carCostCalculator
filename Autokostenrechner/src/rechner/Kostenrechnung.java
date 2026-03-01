@@ -32,7 +32,7 @@ public class Kostenrechnung {
         	auto1kosten = scanner.nextDouble();
         	break; //win condition
         } else {
-			System.out.println("Falscher input");
+			System.out.println("Falscher Input");
 			scanner.next();
 		}
     }
@@ -42,7 +42,7 @@ public class Kostenrechnung {
         		auto1laufleistung =  scanner.nextDouble();
         		break;
         	} else {
-        		System.out.println("Falscher input");
+        		System.out.println("Falscher Input");
         		scanner.next();
         	}
         }
@@ -64,7 +64,7 @@ public class Kostenrechnung {
     		auto1versicherung = scanner.nextDouble();
     		break;
      	} else {
-     		System.out.println("Falscher input");
+     		System.out.println("Falscher Input");
     		scanner.next();
      	}
     }
@@ -75,7 +75,7 @@ public class Kostenrechnung {
     		 auto1spritpreis = scanner.nextDouble();
     		 break;
     	 } else {
-    		 System.out.println("Falscher input");
+    		 System.out.println("Falscher Input");
     		 scanner.next();
     	 }
     }
@@ -86,7 +86,7 @@ public class Kostenrechnung {
         	auto2kosten = scanner.nextDouble();
         	break; //win condition
         } else {
-			System.out.println("Falscher input");
+			System.out.println("Falscher Input");
 			scanner.next();
 		}
     }
@@ -96,7 +96,7 @@ public class Kostenrechnung {
         		auto2laufleistung =  scanner.nextDouble();
         		break;
         	} else {
-        		System.out.println("Falscher input");
+        		System.out.println("Falscher Input");
         		scanner.next();
         	}
         }
@@ -107,7 +107,7 @@ public class Kostenrechnung {
     		auto2verbrauch = scanner.nextDouble();
     		break;
     	} else {
-    		System.out.println("Falscher input");
+    		System.out.println("Falscher Input");
     		scanner.next();
     	}
     }
@@ -118,7 +118,7 @@ public class Kostenrechnung {
     		auto2versicherung = scanner.nextDouble();
     		break;
      	} else {
-     		System.out.println("Falscher input");
+     		System.out.println("Falscher Input");
     		scanner.next();
      	}
     }
